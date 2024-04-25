@@ -1,3 +1,5 @@
+<!-- connexion.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +16,11 @@
             <div class="nav-links">
                 <ul>
                     <li><a href="../html/accueil.html">Accueil</a></li>
-                        <li><a href="../html/carrosserie.html">Carrosserie</a></li>
-                        <li><a href="../html/mecanique.html">Mécanique</a></li>
-                        <li><a href="../html/vehicules.html">Les voitures d'occasion</a></li>
-                        <li><a href="../html/lesavis.html">Les avis</a></li>
-                        <li><a href="../html/nous-contacter.html">Nous contacter</a></li>
-                        <li class="button"><a href="../html/connexion.html">Connexion</a></li>
+                    <li><a href="../html/carrosserie.html">Carrosserie</a></li>
+                    <li><a href="../html/mecanique.html">Mécanique</a></li>
+                    <li><a href="../html/vehicules.html">Les voitures d'occasion</a></li>
+                    <li><a href="../html/lesavis.html">Les avis</a></li>
+                    <li><a href="../html/nous-contacter.html">Nous contacter</a></li>
                 </ul>
             </div>
             <img src="../images/burger noir.png" alt="menu hamburger" class="menu-hamburger">
@@ -28,14 +29,20 @@
 
     <div class="contentform">
         <h2>Connexion</h2>
-        <form id="loginForm">
+        <form id="loginForm" method="post" action="">
+            <label for="userType">Type d'utilisateur :</label>
+            <select id="userType" name="userType">
+                <option value="admin">Administrateur</option>
+                <option value="user">Utilisateur</option>
+            </select>
+            <br>
             <label for="username">Nom d'utilisateur :</label>
             <input type="text" id="username" name="username" required>
             <br>
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password" required>
             <br>
-            <button type="button" onclick="connexion()">Se Connecter</button>
+            <button type="submit">Se Connecter</button>
         </form>
     </div>
 
@@ -49,18 +56,14 @@
             navLinks.classList.toggle('mobile-menu');
         });
 
-        function connexion() {
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            if (username === "admin" && password === "admin") {
-                window.location.href = "administrateur.html";
-            } else if (username === "utilisateur" && password === "utilisateur") {
-                window.location.href = "utilisateur.html";
-            } else {
-                alert("Identifiants incorrects. Veuillez réessayer.");
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            var userType = document.getElementById('userType').value;
+            if (userType === 'admin') {
+                this.action = 'connexion.php'; 
+            } else if (userType === 'user') {
+                this.action = 'connexion_utilisateur.php'; 
             }
-        }
+        });
     </script>
 </body>
 </html>
