@@ -1,38 +1,39 @@
 <?php
+session_start(); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $nom = htmlspecialchars($_POST["nom"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $telephone = htmlspecialchars($_POST["telephone"]);
-    $message = htmlspecialchars($_POST["message"]);
-
    
-    $servername = "localhost";
-    $username = "votre_nom_utilisateur";
-    $password = "votre_mot_de_passe";
-    $dbname = "votre_base_de_donnees";
+    if (isset($_POST["nom"]) && isset($_POST["email"]) && isset($_POST["telephone"]) && isset($_POST["message"])) {
+        $nom = htmlspecialchars($_POST["nom"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $telephone = htmlspecialchars($_POST["telephone"]);
+        $message = htmlspecialchars($_POST["message"]);
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        include 'connexion.php';
 
-    if ($conn->connect_error) {
-        die("La connexion à la base de données a échoué : " . $conn->connect_error);
-    }
+        
+        $sql = "INSERT INTO rendezvous (nom, email, telephone, message) VALUES (?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssss", $nom, $email, $telephone, $message);
 
-   
-    $sql = "INSERT INTO rendezvous (nom, email, telephone, message) VALUES ('$nom', '$email', '$telephone', '$message')";
+        if ($stmt->execute()) {
+            echo "Rendez-vous pris avec succès.";
+        } else {
+            echo "Erreur lors de la prise de rendez-vous : " . $conn->error;
+        }
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Rendez-vous pris avec succès.";
+
+        $stmt->close();
+        $conn->close();
     } else {
-        echo "Erreur lors de la prise de rendez-vous : " . $conn->error;
+        
+        header("Location: erreur.php");
+        exit();
     }
-
-   
-    $conn->close();
 } else {
-   
-    header("Location: exemple_mecanique.html");
+    
+    header("Location: index.php");
     exit();
 }
 ?>
