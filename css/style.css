@@ -1,0 +1,548 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(0, 0, 0);
+}
+
+header {
+    height: 20vh;
+    width: 100vw;
+    background-color: black;
+}
+
+.navbar {
+    position: absolute;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar .menu-hamburger {
+    display: block;
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin: 0 25px;
+}
+
+.navbar .nav-links .button {
+    background-color: #581818;
+    border-radius: 20px;
+    padding: 10px;
+    margin: -10px 25px;
+}
+
+.navbar .nav-links ul li.active a {
+    margin: 25px;
+    color: #a33737;
+    font-size: 600;
+}
+
+.navbar .menu-hamburger {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 35px;
+}
+
+@media screen and (max-width: 600px) {
+    .avis-form textarea {
+        width: 100%;
+    }
+
+    .carrosserie img,
+    .mecanique img {
+        width: 100%;
+        height: auto;
+    }
+
+    td {
+        display: block;
+        text-align: center;
+    }
+
+    .avis-item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar .logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    .navbar .menu-hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: black;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links.mobile-menu {
+        margin-top: 170px;
+        margin-left: 0;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar .nav-links ul li {
+        margin: 25px;
+        font-size: 1.2em;
+    }
+
+    .navbar .nav-links .button {
+        margin: 25px;
+        padding: 10px;
+        background-color: #581818;
+        border-radius: 20px;
+        text-align: center;
+    }
+}
+
+h2 {
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+p {
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.integration {
+    margin-top: 100px;
+    height: 50%;
+    width: 100%;
+}
+
+td {
+    padding-top: 0%;
+}
+
+.carrosserie .mecanique {
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+}
+
+h3 {
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.horaire {
+    margin: 20px;
+    padding: 5px;
+    background-color: #581818;
+    border-radius: 20px;
+}
+
+.avis-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(238, 219, 208);
+    color: black;
+    border-radius: 20px;
+    border: 2px #ffc38c solid;
+}
+
+.avis-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avis-form textarea {
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.avis-form button {
+    background-color: #581818;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.avis-form button:hover {
+    background-color: #a33737;
+}
+
+.avis-list {
+    margin-top: 20px;
+}
+
+.avis-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.avis {
+    margin: 20px 0;
+    padding: 15px;
+    border: 2px solid #6e0707;
+    background-color: rgb(80, 21, 21);
+    border-radius: 10px;
+}
+
+.note {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.etoile {
+    font-size: 1.5em;
+    color: #9e4c00;
+}
+
+.etoile.pleine::before {
+    content: "\2605";
+}
+
+.etoile.vide::before {
+    content: "\2606";
+}
+
+.rendez-vous-section {
+    margin-top: 20px;
+}
+
+.rendez-vous-section form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.rendez-vous-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.rendez-vous-section input,
+.rendez-vous-section textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.rendez-vous-section button {
+    background-color: #310b0b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.rendez-vous-section button:hover {
+    background-color: #555;
+}
+
+.avis-section {
+    margin-top: 20px;
+    padding-right: 5px;
+}
+
+.avis-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.avis-section form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.avis-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.avis-section select,
+.avis-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.avis-section button {
+    background-color: #361717;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.avis-section button:hover {
+    background-color: #555;
+}
+
+.service-details img {
+    display: block;
+    margin: 0 auto;
+}
+
+.vehicules-section {
+    display: grid;
+    gap: 20px;
+    justify-content: flex-end; /* Aligner les cartes à droite */
+}
+
+.vehicule-card {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #380808;
+    margin-bottom: 20px; 
+    max-width: 300px; 
+}
+
+.contentform {
+    max-width: 400px;
+    margin: 40px auto 0;
+    background-color: #380808;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #724641;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #d9534f;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .vehicule-card {
+        width: 45%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .vehicule-card {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+label[for="filtre"] {
+    margin-right: 10px;
+}
+
+#filtre {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.vehicules-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.vehicule-card {
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.vehicule-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.vehicule-card h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.vehicule-card p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.vehicule-card button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vehicule-card:nth-child(odd) {
+    background-color: #380808; 
+}
+
+.vehicule-card:nth-child(even) {
+    background-color: #380808;
+}
+
+@media (min-width: 600px) {
+    .vehicules-section {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center; 
+    }
+}
+
+.vehicules-section {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.vehicule-card {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #380808;
+    margin-bottom: 20px; 
+    max-width: 300px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #131111;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

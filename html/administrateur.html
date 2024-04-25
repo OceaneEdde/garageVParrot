@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Administration</title>
+    <link rel="stylesheet" href="../css/adminutilisateur.css">
+</head>
+<body>
+    
+    <div id="sidebar">
+        <div id="profile">
+            <h1>Bienvenue</h1>
+            <img src="../images/profile-picture.jpg" alt="Profile Picture">
+            <h2>Nom Prénom</h2>
+            <p>Directeur</p>
+        </div>
+        <a href="logout.php">Se déconnecter</a>
+
+        <div id="content">
+            <div id="add-employee">
+                <h2>Ajouter un employé</h2>
+                <form action="#" method="post">
+                    <label for="employee-name">Nom de l'employé:</label>
+                    <input type="text" id="employee-name" name="employee-name" required>
+
+                    <label for="employee-position">Poste:</label>
+                    <input type="text" id="employee-position" name="employee-position" required>
+
+                    <button type="submit">Ajouter Employé</button>
+                </form>
+            </div>
+
+            <div id="edit-information">
+                <h2>Modifier les informations</h2>
+                <form action="#" method="post">
+                    <label for="commentaire">Ajouter un post:</label>
+                    <textarea id="commentaire" name="commentaire" rows="4" required></textarea>
+                    <br>
+                    <button type="submit">Enregistrer</button>
+                </form>
+            </div>
+
+            <div id="business-hours">
+                <h2>Préciser les horaires d'ouverture</h2>
+                <form action="#" method="post">
+                    <label for="opening-hours">Heures d'ouverture:</label>
+                    <input type="text" id="opening-hours" name="opening-hours" placeholder="Ex: 9h00 - 17h00" required>
+                    <button type="submit">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="return-to-login">
+            <h2>Retour à la page de connexion</h2>
+            <button onclick="window.location.href='connexion.html'">Retour</button>
+        </div>
+    </div>
+
+    <div id="content-2"> 
+        <div id="last-employee">
+            <h2>Dernier employé enregistré</h2>
+            <div class="employee-info">
+                <img src="../images/lastemployee.jpg" alt="Dernier employé">
+                <p>Nom de l'employé</p>
+            </div>
+            <div id="new-post">
+                <h2>Modification des information</h2>
+                <div class="nouveau-poste">
+                    <h2>Le mot du directeur</h2>
+                    <p>Chers amis de V.Parrot,<br> 
+                    Bienvenue sur notre site dédié aux amoureux de l'automobile ! Chez V.Parrot, nous sommes passionnés par les voitures, de la vente de véhicules d'occasion à l'entretien mécanique et carrosserie. Notre équipe dévouée met tout en œuvre pour vous offrir des services de qualité.
+                    Explorez notre sélection de voitures d'occasion fiables et découvrez nos services professionnels. Nous sommes là pour rendre votre expérience automobile agréable et sans tracas.<br>
+                    Merci de faire partie de la famille V.Parrot.<br>
+                    Bien à vous,</p>
+                    <p>Directeur, V.Parrot Garage Auto</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

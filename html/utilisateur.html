@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Administration</title>
+    <link rel="stylesheet" href="../css/adminutilisateur.css">
+</head>
+<body>
+    
+    <div id="sidebar">
+        <h1>Bienvenue</h1>
+        <div id="profile">
+            <img src="../images/profile-picture.jpg" alt="Profile Picture">
+            <h2>Nom Prénom</h2>
+            <p>Employé</p>
+        </div>
+        <a href="../logout.php">Se déconnecter</a>
+    </div>
+
+    <div id="content">
+        <div id="add-cars">
+            <h2>Ajouter une nouvelle voiture</h2>
+            <form>
+            
+                <label for="car-name">Nom de la voiture :</label>
+                <input type="text" id="car-name" name="car-name" required>
+
+                
+                <label for="car-photo">Photo de la voiture :</label>
+                <input type="file" id="car-photo" name="car-photo" accept="image/*">
+
+                
+                <button type="submit">Ajouter nouvelle voiture</button>
+            </form>
+        </div>
+
+        <div id="manage-reviews">
+            <h2>Gestion des Avis</h2>
+
+           
+            <div class="review-item">
+                <p>Nom d'utilisateur: Client Client</p>
+                <p>Avis: Un super service!</p>
+               
+                <div class="review-actions">
+                    <button type="button" class="accept-btn">Accepter</button>
+                    <button type="button" class="reject-btn">Refuser</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="return-to-login">
+            <h2>Retour à la page de connexion</h2>
+            <button onclick="window.location.href='connexion.html'">Retour</button>
+        </div>
+    </div>
+
+    <script src="manage-reviews.js"></script>
+        
+</body>
+</html>
