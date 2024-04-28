@@ -11,7 +11,6 @@
 <?php
         include_once('./templates/header.php');
         ?>
-    
 
     <div class="content mecanique-section">
         <h2>Nos Services de Mécanique</h2>

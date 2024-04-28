@@ -9,7 +9,7 @@
     
     <body>
    
-<?php
+    <?php
         include_once('./templates/header.php');
         ?>
 

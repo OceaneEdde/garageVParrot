@@ -13,6 +13,7 @@
 <?php
         include_once('./templates/header.php');
         ?>
+        
     <h2>Nos Véhicules</h2>
 
     <div class="filter-section">
