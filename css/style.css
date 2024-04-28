@@ -180,10 +180,11 @@ h3 {
 }
 
 .horaire {
-    margin: 20px;
+    margin: 20px auto;
     padding: 5px;
     background-color: #581818;
     border-radius: 20px;
+    width: 50%;
 }
 
 .avis-section {
@@ -343,12 +344,6 @@ h3 {
     margin: 0 auto;
 }
 
-.vehicules-section {
-    display: grid;
-    gap: 20px;
-    justify-content: flex-end; /* Aligner les cartes à droite */
-}
-
 .vehicule-card {
     width: 100%;
     text-align: center;
@@ -440,12 +435,6 @@ label[for="filtre"] {
     border: 1px solid #ccc;
 }
 
-.vehicules-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
 .vehicule-card {
     text-align: center;
     padding: 15px;
@@ -453,8 +442,9 @@ label[for="filtre"] {
 }
 
 .vehicule-card img {
-    max-width: 100%;
-    height: auto;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
@@ -486,23 +476,16 @@ label[for="filtre"] {
     background-color: #380808;
 }
 
-@media (min-width: 600px) {
-    .vehicules-section {
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: center; 
-    }
-}
-
 .vehicules-section {
-    display: grid;
-    gap: 20px;
+    display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto; 
+    align-items: center;
+    gap: 30px;
 }
 
 .vehicule-card {
     width: 100%;
+    height: 600px;
     text-align: center;
     padding: 15px;
     border-radius: 10px;
